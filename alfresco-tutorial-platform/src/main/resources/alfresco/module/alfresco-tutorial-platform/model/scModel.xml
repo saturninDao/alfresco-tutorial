@@ -32,8 +32,22 @@
     <types>
         <!-- Enterprise-wide generic document type -->
         <type name="sc:doc">
-            <title>Someco Document</title>
-            <parent>cm:content</parent>
+        <title>Someco Document</title>
+        <parent>cm:content</parent>
+            <associations>
+                <association name="sc:relatedDocuments">
+                    <title>Related Documents</title>
+                        <source>
+                            <mandatory>false</mandatory>
+                            <many>true</many>
+                        </source>
+                        <target>
+                            <class>sc:doc</class>
+                            <mandatory>false</mandatory>
+                            <many>true</many>
+                        </target>
+                </association>
+            </associations>
         </type>
         <type name="sc:marketingDoc">
             <title>Someco Marketing Document</title>
