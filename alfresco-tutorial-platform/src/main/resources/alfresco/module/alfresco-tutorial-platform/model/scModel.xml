@@ -27,6 +27,15 @@
         <type name="sc:marketingDoc">
             <title>Someco Marketing Document</title>
             <parent>sc:doc</parent>
+            <properties>
+                <property name="sc:campaign">
+                    <type>d:text</type>
+                    <multiple>true</multiple>
+                    <constraints>
+                        <constraint ref="sc:campaignList" />
+                    </constraints>
+                </property>
+            </properties>
         </type>
         <type name="sc:whitepaper">
             <title>Someco Whitepaper</title>
