@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="helloWorld" name="helloWorld" isExecutable="true">
+    <startEvent id="sid-6ae8ece0-dfb1-4e95-bcd6-0cf9fcbc184f"/>
+    <userTask id="sid-d0d694e8-a4ce-4aa2-b9d2-2b1709614b86" activiti:assignee="${initiator.properties.userName}"/>
+    <sequenceFlow id="sid-de64754b-57b9-43db-a88e-3f362b4fe4e0" sourceRef="sid-6ae8ece0-dfb1-4e95-bcd6-0cf9fcbc184f" targetRef="sid-d0d694e8-a4ce-4aa2-b9d2-2b1709614b86"/>
+    <endEvent id="sid-ab771d31-e109-43dd-8c25-20ce1b374e45"/>
+    <sequenceFlow id="sid-282da3eb-d2ae-43ef-a31e-5bc59dc2261f" sourceRef="sid-d0d694e8-a4ce-4aa2-b9d2-2b1709614b86" targetRef="sid-ab771d31-e109-43dd-8c25-20ce1b374e45">
+      <extensionElements>
+        <activiti:executionListener event="start" class="org.alfresco.repo.workflow.activiti.listener.ScriptExecutionListener">
+          <activiti:field name="script">
+            <activiti:string>logger.log("Hello, World!");</activiti:string>
+          </activiti:field>
+        </activiti:executionListener>
+      </extensionElements>
+    </sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_helloWorld">
+    <bpmndi:BPMNPlane bpmnElement="helloWorld" id="BPMNPlane_helloWorld">
+      <bpmndi:BPMNShape id="shape-6739495a-7619-4c93-ac20-46884b58e6d7" bpmnElement="sid-6ae8ece0-dfb1-4e95-bcd6-0cf9fcbc184f">
+        <omgdc:Bounds x="0.0" y="70.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape-b281f8c5-8e51-41b2-9d43-a59d5094c989" bpmnElement="sid-d0d694e8-a4ce-4aa2-b9d2-2b1709614b86">
+        <omgdc:Bounds x="90.0" y="45.0" width="100.0" height="80.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-c8b4da65-749f-43ef-a306-0dcda4bc3358" bpmnElement="sid-de64754b-57b9-43db-a88e-3f362b4fe4e0">
+        <omgdi:waypoint x="30.0" y="85.0"/>
+        <omgdi:waypoint x="90.0" y="85.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape-26113eb3-2b63-44e3-bc1f-fbdbbc07f5e0" bpmnElement="sid-ab771d31-e109-43dd-8c25-20ce1b374e45">
+        <omgdc:Bounds x="275.0" y="70.0" width="30.0" height="30.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge-90f0def6-fd77-46a3-b12a-f830962325cc" bpmnElement="sid-282da3eb-d2ae-43ef-a31e-5bc59dc2261f">
+        <omgdi:waypoint x="190.0" y="85.0"/>
+        <omgdi:waypoint x="275.0" y="85.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
