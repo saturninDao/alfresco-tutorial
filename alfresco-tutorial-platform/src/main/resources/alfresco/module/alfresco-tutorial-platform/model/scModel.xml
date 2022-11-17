@@ -18,6 +18,17 @@
     <namespaces>
         <namespace uri="http://www.someco.com/model/content/1.0" prefix="sc" />
     </namespaces>
+    <constraints>
+        <constraint name="sc:campaignList" type="LIST">
+            <parameter name="allowedValues">
+                <list>
+                    <value>Application Syndication</value>
+                    <value>Private Event Retailing</value>
+                    <value>Social Shopping</value>
+                </list>
+            </parameter>
+        </constraint>
+    </constraints>
     <types>
         <!-- Enterprise-wide generic document type -->
         <type name="sc:doc">
