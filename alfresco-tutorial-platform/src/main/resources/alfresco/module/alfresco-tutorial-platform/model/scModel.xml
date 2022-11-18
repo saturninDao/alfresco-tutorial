@@ -48,6 +48,9 @@
                         </target>
                 </association>
             </associations>
+            <mandatory-aspects>
+                <aspect>cm:generalclassifiable</aspect>
+            </mandatory-aspects>
         </type>
         <type name="sc:marketingDoc">
             <title>Someco Marketing Document</title>
@@ -65,6 +68,22 @@
         <type name="sc:whitepaper">
             <title>Someco Whitepaper</title>
             <parent>sc:marketingDoc</parent>
+        </type>
+        <type name="sc:hrDoc">
+            <title>Someco HR Document</title>
+            <parent>sc:doc</parent>
+        </type>
+        <type name="sc:salesDoc">
+            <title>Someco Sales Document</title>
+            <parent>sc:doc</parent>
+        </type>
+        <type name="sc:opsDoc">
+            <title>Someco Operations Document</title>
+            <parent>sc:doc</parent>
+        </type>
+        <type name="sc:legalDoc">
+            <title>Someco Legal Document</title>
+            <parent>sc:doc</parent>
         </type>
     </types>
 </model>
