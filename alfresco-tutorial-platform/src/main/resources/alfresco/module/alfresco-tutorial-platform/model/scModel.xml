@@ -87,3 +87,8 @@
         </type>
     </types>
 </model>
+<index enabled='true'>
+<atomic>true</atomic>
+<stored>false</stored>
+<tokenised>true</tokenised>
+</index>
